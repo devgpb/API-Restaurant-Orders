@@ -24,6 +24,7 @@ import { RemoveItemController } from './controllers/order/RemoveItemController';
 import { SendOrderController } from './controllers/order/SendOrderController';
 import { DetailOrderController } from './controllers/order/DetailOrderController';
 import { FinishOrderController } from './controllers/order/FinishOrderController';
+import { ChangeTakeAwayController } from './controllers/order/ChangeTakeAwayController';
 
 
 
@@ -54,6 +55,7 @@ router.delete('/order',isAuthenticated, new RemoveOrderController().handle)
 router.get('/order/list',isAuthenticated, new ListOrderController().handle)
 router.get('/order/list/all',isAuthenticated, new ListAllOrderController().handle)
 router.post('/order/add',isAuthenticated, new AddItemController().handle)
+router.post('/order/takeaway',isAuthenticated, new ChangeTakeAwayController().handle)
 router.delete('/order/remove',isAuthenticated, new RemoveItemController().handle)
 router.put('/order/send',isAuthenticated, new SendOrderController().handle)
 router.get('/order/detail',isAuthenticated, new DetailOrderController().handle)

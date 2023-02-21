@@ -11,7 +11,7 @@ interface AuthRequest{
 
 class AuthUserService{
     async execute({ email,password }: AuthRequest){
-
+        console.log(email)
         //Verificar se email existe no db
         const user = await prismaClient.user.findFirst({
             where:{
